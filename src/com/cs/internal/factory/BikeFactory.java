@@ -7,11 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BikeFactory {
-    private static int bikeNumber = 0 ;
-    private static int partNumber = 0 ;
+    private static int bikeNumber = 0;
+    private static int partNumber = 0;
 
     //bike list
-    private static List<Bike> allBikes = new ArrayList<>(); //[e1->e2->e3->,e4] Bike b = allBikes.get(e2), Bike c = e2.getNext();
+    private static List<Bike> allBikes = new ArrayList<>();
+    //[e1->e2->e3->,e4] Bike b = allBikes.get(e2), Bike c = e2.getNext();
     //frame list
     private static List<BikePart> allFrames = new ArrayList<>();//[e1,e2,e3,e4] e2.getNext(); -> error!
     //....
@@ -29,29 +30,57 @@ public class BikeFactory {
     //p2.price > p3.price => p3.next = p2
     //
 
-    public static void createBikes(String fileName){
+    public static void createBikes(String fileName) {
         //read data from file and create parts. TODO
         //loop over file lines and create BikeParts.
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String sCurrentLine;
             while ((sCurrentLine = br.readLine()) != null) {
                 String[] properties = sCurrentLine.split("=")[1].split(",");
-                BikePart frame = new BikePart(++partNumber, properties[0], properties[1], Integer.parseInt(properties[2]), properties[3], Integer.parseInt(properties[4]), properties[5]);
+                BikePart frame = new BikePart(
+                        ++partNumber,
+                        properties[0],
+                        properties[1],
+                        Integer.parseInt(properties[2]),
+                        properties[3],
+                        Integer.parseInt(properties[4]),
+                        properties[5]);
                 allFrames.add(frame);
 
                 sCurrentLine = br.readLine();
                 properties = sCurrentLine.split("=")[1].split(",");
-                BikePart wheels = new BikePart(++partNumber, properties[0], properties[1], Integer.parseInt(properties[2]), properties[3], Integer.parseInt(properties[4]), properties[5]);
+                BikePart wheels = new BikePart(
+                        ++partNumber,
+                        properties[0],
+                        properties[1],
+                        Integer.parseInt(properties[2]),
+                        properties[3],
+                        Integer.parseInt(properties[4]),
+                        properties[5]);
                 allWheels.add(wheels);
 
                 sCurrentLine = br.readLine();
                 properties = sCurrentLine.split("=")[1].split(",");
-                BikePart bar = new BikePart(++partNumber, properties[0], properties[1], Integer.parseInt(properties[2]), properties[3], Integer.parseInt(properties[4]), properties[5]);
+                BikePart bar = new BikePart(
+                        ++partNumber,
+                        properties[0],
+                        properties[1],
+                        Integer.parseInt(properties[2]),
+                        properties[3],
+                        Integer.parseInt(properties[4]),
+                        properties[5]);
                 allBars.add(bar);
 
                 sCurrentLine = br.readLine();
                 properties = sCurrentLine.split("=")[1].split(",");
-                BikePart fork = new BikePart(++partNumber, properties[0], properties[1], Integer.parseInt(properties[2]), properties[3], Integer.parseInt(properties[4]), properties[5]);
+                BikePart fork = new BikePart(
+                        ++partNumber,
+                        properties[0],
+                        properties[1],
+                        Integer.parseInt(properties[2]),
+                        properties[3],
+                        Integer.parseInt(properties[4]),
+                        properties[5]);
                 allForks.add(fork);
 
                 Bike b = new Bike(++bikeNumber, frame, wheels, bar, fork);
@@ -66,38 +95,38 @@ public class BikeFactory {
         }
     }
 
-    public static void createBikes(){
+    public static void createBikes() {
         BikePart frame1 = new BikePart(++partNumber, "colony", "Frame", 300, "black", 2016, "20");
         allFrames.add(frame1);
-        BikePart wheels1 = new BikePart(++partNumber,"Merritt", "Wheels", 465, "black", 2015, "Medium");
+        BikePart wheels1 = new BikePart(++partNumber, "Merritt", "Wheels", 465, "black", 2015, "Medium");
         allWheels.add(wheels1);
-        BikePart bar1 = new BikePart(++partNumber,"BSD", "Bar", 50, "black", 2015, "9.2");
+        BikePart bar1 = new BikePart(++partNumber, "BSD", "Bar", 50, "black", 2015, "9.2");
         allBars.add(bar1);
-        BikePart fork1 = new BikePart(++partNumber,"Cult", "Fork", 170, "black", 2015, "25");
+        BikePart fork1 = new BikePart(++partNumber, "Cult", "Fork", 170, "black", 2015, "25");
         allForks.add(fork1);
-        BikePart frame2 = new BikePart(++partNumber,"Cult", "Frame", 300, "black", 2016, "20");
+        BikePart frame2 = new BikePart(++partNumber, "Cult", "Frame", 300, "black", 2016, "20");
         allFrames.add(frame2);
-        BikePart wheels2 = new BikePart(++partNumber,"Cult", "Wheels", 395, "black", 2015, "Medium");
+        BikePart wheels2 = new BikePart(++partNumber, "Cult", "Wheels", 395, "black", 2015, "Medium");
         allWheels.add(wheels2);
-        BikePart bar2 = new BikePart(++partNumber,"Merritt", "Bar", 45, "black", 2015, "9.2");
+        BikePart bar2 = new BikePart(++partNumber, "Merritt", "Bar", 45, "black", 2015, "9.2");
         allBars.add(bar2);
-        BikePart fork2 = new BikePart(++partNumber,"colony", "Fork", 145, "black", 2015, "25");
+        BikePart fork2 = new BikePart(++partNumber, "colony", "Fork", 145, "black", 2015, "25");
         allForks.add(fork2);
-        BikePart frame3 = new BikePart(++partNumber,"Cult", "Frame", 380, "black", 2016, "20");
+        BikePart frame3 = new BikePart(++partNumber, "Cult", "Frame", 380, "black", 2016, "20");
         allFrames.add(frame3);
-        BikePart wheels3 = new BikePart(++partNumber,"colony", "Wheels", 510, "black", 2015, "Medium");
+        BikePart wheels3 = new BikePart(++partNumber, "colony", "Wheels", 510, "black", 2015, "Medium");
         allWheels.add(wheels3);
-        BikePart bar3 = new BikePart(++partNumber,"BSD", "Bar", 39, "black", 2015, "9.2");
+        BikePart bar3 = new BikePart(++partNumber, "BSD", "Bar", 39, "black", 2015, "9.2");
         allBars.add(bar3);
-        BikePart fork3 = new BikePart(++partNumber,"Merritt", "Fork", 170, "black", 2015, "25");
+        BikePart fork3 = new BikePart(++partNumber, "Merritt", "Fork", 170, "black", 2015, "25");
         allForks.add(fork3);
         BikePart frame4 = new BikePart(++partNumber, "colony", "Frame", 312, "black", 2016, "20");
         allFrames.add(frame4);
-        BikePart wheels4 = new BikePart(++partNumber,"Merritt", "Wheels", 420, "black", 2015, "Medium");
+        BikePart wheels4 = new BikePart(++partNumber, "Merritt", "Wheels", 420, "black", 2015, "Medium");
         allWheels.add(wheels4);
-        BikePart bar4 = new BikePart(++partNumber,"BSD", "Bar", 65, "black", 2015, "9.2");
+        BikePart bar4 = new BikePart(++partNumber, "BSD", "Bar", 65, "black", 2015, "9.2");
         allBars.add(bar4);
-        BikePart fork4 = new BikePart(++partNumber,"Cult", "Fork", 183, "black", 2015, "25");
+        BikePart fork4 = new BikePart(++partNumber, "Cult", "Fork", 183, "black", 2015, "25");
         allForks.add(fork4);
 
         Bike b1 = new Bike(++bikeNumber, frame1, wheels1, bar1, fork1);
@@ -122,7 +151,7 @@ public class BikeFactory {
 
     }
 
-    public static Bike createCustomBike(BikePart frame, BikePart wheels, BikePart bar, BikePart fork){
+    public static Bike createCustomBike(BikePart frame, BikePart wheels, BikePart bar, BikePart fork) {
         Bike customBike = new Bike(++bikeNumber, frame, wheels, bar, fork);
         allBikes.add(customBike);
         return customBike;
@@ -130,11 +159,12 @@ public class BikeFactory {
     }
 
     //return allBikes
-    public static List<Bike> getAllBikes(){
+    public static List<Bike> getAllBikes() {
         return allBikes;
     }
+
     //return allFrames
-    public static List<BikePart> getAllFrames(){
+    public static List<BikePart> getAllFrames() {
         return allFrames;
     }
 
@@ -142,7 +172,7 @@ public class BikeFactory {
         return partNumber;
     }
 
-    public static List <BikePart> getAllForks(){
+    public static List<BikePart> getAllForks() {
         return allForks;
     }
 
@@ -150,7 +180,7 @@ public class BikeFactory {
         return partNumber;
     }
 
-    public static List <BikePart> getAllWheels(){
+    public static List<BikePart> getAllWheels() {
         return allWheels;
     }
 
@@ -158,7 +188,7 @@ public class BikeFactory {
         return partNumber;
     }
 
-    public static List <BikePart> getAllBars(){
+    public static List<BikePart> getAllBars() {
         return allBars;
     }
 
@@ -168,43 +198,40 @@ public class BikeFactory {
 
     public static List<BikePart> getBikePartByBrand(String brand) {
         List<BikePart> partsByBrand = new ArrayList<>();
-        for (BikePart bp :  BikeFactory.getAllBikeParts()) {
-            if (bp.getBrand().equals(brand)){
+        for (BikePart bp : BikeFactory.getAllBikeParts()) {
+            if (bp.getBrand().equals(brand)) {
                 partsByBrand.add(bp);
             }
         }
         return partsByBrand;
     }
 
-    public static List<BikePart> getAllBikeParts(){
+    public static List<BikePart> getAllBikeParts() {
         return allParts;
 
     }
 
-    public static  Object[] getAllBikesByPrice(){
+    public static Object[] getAllBikesByPrice() {
         return bubbleSortBikesByPrice(allBikes);
     }
 
     //given a list of bikes, this method will return an array of sorted biked by price.
-    private static Object[] bubbleSortBikesByPrice(List<Bike> bikes){
+    private static Object[] bubbleSortBikesByPrice(List<Bike> bikes) {
         Object[] arrayBike = bikes.toArray();
-        for(int i = 0 ; i<arrayBike.length - 2;i++){
-            for(int j = 0 ; j<arrayBike.length - 2-i;j++){
+        for (int i = 0; i < arrayBike.length - 2; i++) {
+            for (int j = 0; j < arrayBike.length - 2 - i; j++) {
                 //casting objects to bikes so we can get the price.
                 Bike bikeJ = (Bike)arrayBike[j];
-                Bike bikeJ1 = (Bike)arrayBike[j+1];
-                if(bikeJ.getPrice() < bikeJ1.getPrice() ){
+                Bike bikeJ1 = (Bike)arrayBike[j + 1];
+                if (bikeJ.getPrice() < bikeJ1.getPrice()) {
                     Bike tmp = bikeJ;
                     arrayBike[j] = bikeJ1;
-                    arrayBike[j+1]=tmp;
+                    arrayBike[j + 1] = tmp;
                 }
             }
         }
         return arrayBike;
     }
-
     //    private static Object[] bubbleSortBikePartsByYearModel(List<BikePart> bikeParts){
     //            	if(bikePArtJ.getYearModel() < bikePArtJ1.getYearModel() ){
-
-
 }

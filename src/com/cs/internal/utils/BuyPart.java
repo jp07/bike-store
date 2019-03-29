@@ -21,7 +21,7 @@ public class BuyPart {
         BikePart toBuy = getPart(partNumber);
         if (toBuy == null) {
             System.out.println("No bike under this selection");
-            BikeStore  a = new BikeStore();
+            BikeStore a = new BikeStore();
             a.startUpScreen();
         } else {
             System.out.println("Please pay " + toBuy.getPrice());
@@ -46,7 +46,7 @@ public class BuyPart {
     }
 
     private BikePart getPart(int number) {
-        for (BikePart bp :  BikeFactory.getAllBikeParts()) {
+        for (BikePart bp : BikeFactory.getAllBikeParts()) {
             if (bp.getPartNumber() == number) {
                 return bp;
             }

@@ -55,7 +55,4 @@ public class Bike {
                 "\n price=" + price +
                 '}';
     }
-
-
-
 }

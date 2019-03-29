@@ -13,7 +13,7 @@ public class BikePart {
     private String size;
 
     //BikePart(1,"colony", "Frame", 300, "black", 2016, "20");
-    public BikePart(int partNumber,String brand, String part, int price, String colour, int yearmodel, String size) {
+    public BikePart(int partNumber, String brand, String part, int price, String colour, int yearmodel, String size) {
         this.brand = brand;
         this.partNumber = partNumber;
         this.part = part;
@@ -55,8 +55,8 @@ public class BikePart {
 
     @Override
     public String toString() {
-        return "{partNumber='" + partNumber +'\'' +
-                ", brand='" + brand +  '\'' +
+        return "{partNumber='" + partNumber + '\'' +
+                ", brand='" + brand + '\'' +
                 ", part='" + part + '\'' +
                 ", price=" + price +
                 ", colour='" + colour + '\'' +
@@ -64,7 +64,6 @@ public class BikePart {
                 ", size='" + size + '\'' +
                 '}';
     }
-
 
 
 }

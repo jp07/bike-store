@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class BuyBike {
 
-    public  void buyBike() {
+    public void buyBike() {
         Scanner scanner = new Scanner(System.in);
         listAllBikes();
         String selection = scanner.nextLine();
@@ -22,7 +22,7 @@ public class BuyBike {
         Bike toBuy = getBike(bikeNumber);
         if (toBuy == null) {
             System.out.println("No bike under this selection");
-            BikeStore  a = new BikeStore();
+            BikeStore a = new BikeStore();
             a.startUpScreen();
             //startUpScreen();
         } else {
@@ -36,7 +36,7 @@ public class BuyBike {
         System.out.println("==========================");
         System.out.println();
         Object[] bikesByPrice = BikeFactory.getAllBikesByPrice();
-        for(int i = 0; i<bikesByPrice.length; i++){
+        for (int i = 0; i < bikesByPrice.length; i++) {
             System.out.println(bikesByPrice[i]);
         }
         System.out.println("==========================");
@@ -45,7 +45,7 @@ public class BuyBike {
     }
 
     private Bike getBike(int number) {
-        for (Bike b :  BikeFactory.getAllBikes()) {
+        for (Bike b : BikeFactory.getAllBikes()) {
             if (b.getBikeNumber() == number) {
                 return b;
             }

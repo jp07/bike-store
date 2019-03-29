@@ -18,9 +18,9 @@ public class BikeStore {
         // call BikeFactory to create Bikes and BikeParts
         // if a file is given we are going to create the bikes from the file
         //else we create the build-in bikes
-        if(args.length>0){
+        if (args.length > 0) {
             BikeFactory.createBikes(args[0]);
-        }else{
+        } else {
             BikeFactory.createBikes();
         }
 
@@ -59,9 +59,7 @@ public class BikeStore {
                 break;
             // sort by price
             // search brand getBikePartByBrand(String brand)
-
             //      	}
-
         }
         //startUpScreen();
     }
@@ -96,7 +94,7 @@ public class BikeStore {
     //========================================buy bikes=================================================//
 
     //========================================b) buy parts=================================================//
-    public static void buyPart(){
+    public static void buyPart() {
         BuyPart a = new BuyPart();
         a.buyPart();
 
@@ -104,10 +102,9 @@ public class BikeStore {
     }
 
 
-
     //========================================c) custom bikes=================================================//
 
-    public static void customBike(){
+    public static void customBike() {
         CustomBike a = new CustomBike();
         a.customBike();
 
@@ -125,18 +122,20 @@ public class BikeStore {
             System.out.println(W.toString());
         }
         System.out.println("==========================");
-        System.out.println("Type in the Frame number to buy a Wheel or 0 to cancel the bikebuild and return to main menu.");
+        System.out.println(
+                "Type in the Frame number to buy a Wheel or 0 to cancel the bikebuild and return to main menu.");
         System.out.println("==========================");
     }
 
     public static BikePart getWheel(int number) {
-        for (BikePart W :  BikeFactory.getAllWheels()) {
+        for (BikePart W : BikeFactory.getAllWheels()) {
             if (W.getPartNumber() == number) {
                 return W;
             }
         }
         return null;
     }
+
     //==================================WHEELS================================
     //==================================FRAMES==================================
     public static void listAllFrames() {
@@ -148,18 +147,20 @@ public class BikeStore {
             System.out.println(bp.toString());
         }
         System.out.println("==========================");
-        System.out.println("Type in the Frame number to buy a frame or 0 to cancel the bikebuild and return to main menu.");
+        System.out.println(
+                "Type in the Frame number to buy a frame or 0 to cancel the bikebuild and return to main menu.");
         System.out.println("==========================");
     }
 
     public static BikePart getFrame(int number) {
-        for (BikePart f :  BikeFactory.getAllFrames()) {
+        for (BikePart f : BikeFactory.getAllFrames()) {
             if (f.getPartNumber() == number) {
                 return f;
             }
         }
         return null;
     }
+
     //=============================================FRAMES==========================
     //==============================================BARS===============================
     public static void listAllBars() {
@@ -176,7 +177,7 @@ public class BikeStore {
     }
 
     public static BikePart getBars(int number) {
-        for (BikePart B :  BikeFactory.getAllBars()) {
+        for (BikePart B : BikeFactory.getAllBars()) {
             if (B.getPartNumber() == number) {
                 return B;
             }
@@ -196,12 +197,13 @@ public class BikeStore {
             System.out.println(Q.toString());
         }
         System.out.println("==========================");
-        System.out.println("Type in the Fork number to buy a frame or 0 to cancel the bikebuild and return to main menu.");
+        System.out.println(
+                "Type in the Fork number to buy a frame or 0 to cancel the bikebuild and return to main menu.");
         System.out.println("==========================");
     }
 
     public static BikePart getFork(int number) {
-        for (BikePart Q :  BikeFactory.getAllForks()) {
+        for (BikePart Q : BikeFactory.getAllForks()) {
             if (Q.getPartNumber() == number) {
                 return Q;
             }
